@@ -3,6 +3,9 @@
  
 # Needs work...
 
+# Challenge accepted.
+# v1.01 Minor bugfix and optimisation
+
 import pygame
 import random
 import math
@@ -76,30 +79,22 @@ class Pattern:
         #Draw horizontal line
         print("\tStitching: Horizontally")
         for v in range(0, stitch_count_vertical):
-            if seeds_vertical[v] == 1:
-                for h in range(0, stitch_count_horizontal):
-                    pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x+stitch_length,needle_y], stitch_thickness)
-                    needle_x += stitch_length*2
-            else:
+            if seeds_vertical[v] != 1:
                 needle_x += stitch_length
-                for h in range(0, stitch_count_horizontal):
-                    pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x+stitch_length,needle_y], stitch_thickness)
-                    needle_x += stitch_length*2
+            for h in range(0, stitch_count_horizontal):
+                pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x+stitch_length,needle_y], stitch_thickness)
+                needle_x += stitch_length*2
             needle_x = 0
             needle_y += stitch_length
         
         #Draw vertical line
         print("\tStitching: Vertically")
         for h in range(0, stitch_count_horizontal):
-            if seeds_horizontal[h] == 1:
-                for v in range(0, stitch_count_vertical):
-                    pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x,needle_y+stitch_length], stitch_thickness)
-                    needle_y += stitch_length*2
-            else:
+            if seeds_horizontal[h] != 1:
                 needle_y += stitch_length
-                for h in range(0, stitch_count_horizontal):
-                    pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x,needle_y+stitch_length], stitch_thickness)
-                    needle_y += stitch_length*2
+            for v in range(0, stitch_count_vertical):
+                pygame.draw.line(hitomezashi_patch, stitch_colour, [needle_x,needle_y], [needle_x,needle_y+stitch_length], stitch_thickness)
+                needle_y += stitch_length*2
             needle_y = 0
             needle_x += stitch_length 
         

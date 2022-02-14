@@ -1,7 +1,7 @@
-#Hitomezashi - a hitomezashi pattern generator, in Python using pygame
-#Hitomezashi © 2022 by George Moore is licensed under Attribution-NonCommercial 4.0 International
+# Hitomezashi - a hitomezashi pattern generator, in Python using pygame
+# Hitomezashi © 2022 by George Moore is licensed under Attribution-NonCommercial 4.0 International
  
-# # Needs work...
+# Needs work...
 
 import pygame
 import random

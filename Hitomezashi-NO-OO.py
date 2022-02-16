@@ -75,6 +75,7 @@ while True:
     e = pygame.event.poll()
     if e.type == pygame.QUIT:
         break
+    #Q for Quit
     if e.type ==  pygame.KEYDOWN:
         if e.key == pygame.K_q:
             break
